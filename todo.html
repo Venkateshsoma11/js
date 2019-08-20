@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO</title>
+</head>
+<body>
+    <div id="todo">
+        <form id="myform" onsubmit="add">
+          Enter task <input id="task" type="text">
+           Enter Description <input type="text" id="des">
+        </form>
+    </div>
+    <div id="container">
+        <button  class="btn btn-primary" id="submit" >ADD</button>
+    </div>
+    <ul id="myUL">
+        <li>Hit the gym</li>
+        <li class="checked">Pay bills</li>
+        <li>Meet George</li>
+        <li>Buy eggs</li>
+        <li>Read a book</li>
+        <li>Organize office</li>
+      </ul>
+    <script>
+        var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+    var txt=""
+    var id=1
+    var data= []   
+           
+    document.querySelector("#submit").addEventListener('click',function(event){
+        var name= document.querySelector("#task").value;
+        var pwd=document.querySelector("#des").value;
+        txt=txt+id+"  "+name+"  "+pwd
+        data.push(txt)
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode(name+"  "+pwd);
+        node.appendChild(textnode);
+        document.getElementById("myUL").appendChild(node);
+        //var t = document.createTextNode(txt);
+       // li.appendChild(t);
+       //document.getElementById("myUL").innerHTML = txt;
+        
+        //document.getElementById("myUL").innerHTML = data;
+       // console.log(data)
+       // display()
+        var span = document.createElement("SPAN");
+  var txt1 = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt1);
+    node.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  } txt=""
+    })
+
+   
+    </script>
+</body>
+</html>

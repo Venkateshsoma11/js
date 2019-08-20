@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validation</title>
+</head>
+<body>
+    
+  <form>
+    <div>
+        Enter UserName   <input type="text" id="username" name="userName">
+         Enter Password    <input type="password" id="password" name="pwd">
+    </div>
+    <div id="container">
+         <button  class="btn btn-primary" id="submit" >SUBMIT</button>
+         <button type="reset" class="btn btn-primary">Reset</button>"</button>
+        </div>
+        </form>
+<div id="error" >
+    <p visibility="hidden"></p>
+</div>
+<div id="Success" visibility="hidden">
+        <p >Success</p>
+</div>
+    
+    <script>
+
+    var clickHandler = function(event){
+        console.log(this)
+     console.log("this is clicked")
+    }
+
+    document.querySelector("#submit").addEventListener('click',function(event){
+        var name= document.querySelector("#username").value;
+        var pwd=document.querySelector("#password").value;
+       
+        document.querySelector("#error").style.display="block"
+        
+        document.querySelector("#error").innerHTML="Invalid";
+    });
+    </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+       <input type="text" id="timer">
+       <input type="text" id="interval">
+       <button id="start">START</button>
+       <button id="reset">RESET</button>
+       
+    </div>
+</body>
+<script>
+    var inter=document.getElementById("interval")
+    let sec=0;
+    document.querySelector("#start").addEventListener('click',function(event){
+        const timer1 =function(time){ 
+    handle=setInterval(function(){
+        sec++;
+        document.getElementById("timer").value =sec ;
+        console.log(`executes after ${time} seconds`)
+    },time*1000);
+    
+    };
+
+    timer1(2);
+    })
+    document.querySelector("#reset").addEventListener('click',function(event){
+        document.getElementById("timer").value =0;
+        //sec=0
+        clearInterval(handle)
+    })
+
+</script>
+
+</html>
